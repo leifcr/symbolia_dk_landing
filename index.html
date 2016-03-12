@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Symbolia</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+      <link rel="stylesheet" href="symbolia.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.0.2/jquery.plugin.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.0.2/jquery.countdown.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.0.2/jquery.countdown-da.min.js"></script>
+      <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.0.2/jquery.countdown-nb.min.js"></script> -->
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js"></script> -->
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="nav-wrapper white">
+          <a href="/" class="brand-logo"><img src="images/logos/symbolia_web_logo1.png" alt="Symbolia Logo" class="brand-logo-img" /></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#inform_me">Få besked når Symbolia åbner</a></li>
+            <li><a href="#products">Produkter</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row hide">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <div class="col s12">
+          <div class="valign-wrapper z-depth-2" id="launch-container">
+            <div class="valign center-align full-witdh">
+              <h3 class="text-centre">Hjemmesiden er klar om:</h3>
+              <p id="symbolia_ready_countdown"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col s12">
+          <h2 id="inform_me">Giv mig besked, når Symbolia åbner</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div class="z-depth-2 signupform_holder">
+          <p>&nbsp;</p>
+          <p id="signupError" class="signup-message-field red-text text-darken-2 red lighten-5 center-align" style="display: none;"></p>
+          <p id="signupSuccess" class="signup-message-field green-text text-darken-2 green lighten-5 center-align" style="display: none;"></p>
+          <form id="signup-form" class="signup-form" onsubmit="return signUp(this)">
+            <div class="row">
+              <div class="input-field col s10 offset-s1">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="name" type="text" class="validate">
+                <label for="name">Navn</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s10 offset-s1">
+                <i class="material-icons prefix">email</i>
+                <input id="email" type="email" class="validate">
+                <label for="email" data-error="Ugyldig e-mail adresse" data-success=":-)">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s10 offset-s1">
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="signupButton">Tilmeld
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>
+            </div>
+          </form>
+          <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+      <div class="row">
+        <div class="col s12">
+          <h2 id="products">Produkter</h2>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col s12 m6">
+          <div class="card z-depth-2">
+            <div class="card-image">
+            <img src="images/material_product_icons/symwriter.png" alt="SymWriter icon" />
+            <span class="large-card-title card-title">SymWriter 2<span class="card-subtitle">Kommuniker: Symbolskrivning</span></span>
+            </div>
+            <div class="card-content large-font">
+              <p class="large-font">Motiverende symbolstøtte til skrivning og læsning</p>
+              <ul>
+                <li><i class="tiny material-icons">chevron_right</i>Skriv med symboler</li>
+                <li><i class="tiny material-icons">chevron_right</i>Lav interaktive tavler og opgaver</li>
+                <li><i class="tiny material-icons">chevron_right</i>Forstå ord og begreber med symboler</li>
+                <li><i class="tiny material-icons">chevron_right</i>Visuel og auditiv støtte</li>
+                <li><i class="tiny material-icons">chevron_right</i>Intelligent sproganalyse af ord</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="http://www.widgit.com/symwriter">Læs mere om SymWriter 2</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card z-depth-2">
+            <div class="card-image">
+            <img src="images/material_product_icons/in_print.png" alt="In Print 2 icon" />
+            <span class="large-card-title card-title">In Print 2<span class="card-subtitle">Kommuniker: På Tryk 2</span></span>
+            </div>
+            <div class="card-content large-font">
+              <p class="large-font">Materialer til print og til interaktive tavler</p>
+              <ul>
+                <li><i class="tiny material-icons">chevron_right</i>Lav materiale til inklusion og tosprogede</li>
+                <li><i class="tiny material-icons">chevron_right</i>Lav små historier med billeder og symboler</li>
+                <li><i class="tiny material-icons">chevron_right</i>Lav kort med fokusord</li>
+                <li><i class="tiny material-icons">chevron_right</i>Lav vendespil, bingo eller billedlotteri</li>
+                <li><i class="tiny material-icons">chevron_right</i>Lav opgaver til interaktive tavler            </li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="http://www.widgit.com/inprint">Læs mere om In Print 2</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card z-depth-2">
+            <div class="card-image">
+            <img src="images/material_product_icons/widgit_online.png" alt="Widgit Online icon" />
+            <span class="large-card-title card-title">Widgit Online</span>
+            </div>
+            <div class="card-content large-font">
+              <p class="large-font">Skab symbolressourcer i din browser</p>
+              <ul>
+                <li><i class="tiny material-icons">chevron_right</i>Lav tidsplaner, flashcards, historier og meget mere</li>
+                <li><i class="tiny material-icons">chevron_right</i>Skriv historier med symboler</li>
+                <li><i class="tiny material-icons">chevron_right</i>Brug skabeloner til at komme i gang med</li>
+                <li><i class="tiny material-icons">chevron_right</i>Del dine ressourcer med familie, kolleger eller klassen</li>
+                <li><i class="tiny material-icons">chevron_right</i>Kan benyttes på mac, pc og tablets</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="http://www.widgit.com/products/widgit-online">Læs mere om Widgit Online</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card z-depth-2">
+            <div class="card-image">
+            <img src="images/material_product_icons/widgit_go.png" alt="Widgit Go icon" />
+            <span class="large-card-title card-title">Widgit Go</span>
+            </div>
+            <div class="card-content large-font">
+              <p class="large-font">Kommunikation og sprogudvikling til iPad</p>
+              <ul>
+                <li><i class="tiny material-icons">chevron_right</i>Rediger direkte på iPad</li>
+                <li><i class="tiny material-icons">chevron_right</i>Print tavler og dokumenter</li>
+                <li><i class="tiny material-icons">chevron_right</i>Gem dine tavler i Dropbox</li>
+                <li><i class="tiny material-icons">chevron_right</i>13.000 Widgit Symboler</li>
+                <li>&nbsp;</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="http://www.widgit.com/products/widgit-go">Læs mere om Widgit Go</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer blue darken-4">
+        <div class="container">
+          <div class="row">
+            <div class="col s6">
+              <h5 class="white-text">Symbolia IVS</h5>
+              <p class="grey-text text-lighten-4">Amagerfælledvej 56<br>
+                2300 København S
+              </p>
+              <p class="grey-text text-lighten-4"><a href="mailto:info@symbolia.com">info@symbolia.com</a></p>
+            </div>
+            <div class="col s6 right-align">
+              <img src="http://www.widgit.com/widgit_branding/widgit_logo.png" alt="Widgit Logo" width="250" /><br>
+              <p class="grey-text text-lighten-4"><a href="https://www.widgit.com">widgit.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2016 Symbolia IVS
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <script src="mailchecker.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      // var siteReadyDate = new Date(2016, 3, 4, 12, 0);
+      // $('#symbolia_ready_countdown').countdown({until: siteReadyDate});
+      // Should use this instead of google backed document.
+      // http://www.fizerkhan.com/blog/posts/Startup-Landing-Pages-with-Firebase.html
+      // countdown(
+      //   new Date(),
+      //   function(ts) {
+      //     document.getElementById('symbolia_ready_countdown').innerHTML = ts.toHTML("strong");
+      //   },
+      //   countdown.HOURS|countdown.MINUTES|countdown.SECONDS);
+
+      var onSignupComplete = function(error) {
+        $('#formprogress').hide();
+        if (error) {
+          $('#signupError').html("En fejl har sket, venligst forsøg igen.");
+          $('#signupError').show();
+          $('form').show();
+        } else {
+          $('#signupSuccess').html("Tak " + $("#name").val() + "! Du registrerte email: <strong>" + $("#email").val() + "</strong>");
+          $('#signupSuccess').show();
+          $('.signupform_holder').addClass('green lighten-5');
+        }
+        $('#signupButton').disabled = false;
+      }
+      function validateName(name) {
+        return true;
+      }
+      function signUp(form) {
+        $('.signup-message-field').hide();
+        $('#signupButton').disabled = false;
+        if (window.MailChecker($('#email').val()) == false) {
+          $('#signupError').html('Venligst kontroller e-mail adressen igen.');
+          $('#signupError').show();
+          return false;
+        }
+        if (validateName($('#name').val()) == false) {
+          $('#signupError').html('Venligst kontroller at navnet ikke inholder tegn.');
+          $('#signupError').show();
+          return false;
+        }
+        $('form').hide();
+        $('#formprogress').show();
+        var myFirebaseRef = new Firebase("https://symbolia-signup.firebaseio.com/signups");
+        myFirebaseRef.push({
+                  name: $('#name').val(),
+                  email: $('#email').val(),
+                  created: Firebase.ServerValue.TIMESTAMP
+                  }, onSignupComplete);
+        return false;
+      }
+    </script>
+    <script src="http://localhost:35729/livereload.js"></script>
+
+  </body>
+</html>
