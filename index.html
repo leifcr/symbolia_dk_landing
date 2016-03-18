@@ -26,6 +26,10 @@
       <meta name="msapplication-TileColor" content="#ffffff">
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
       <meta name="theme-color" content="#ffffff">
+      <meta name="description" content="Symbolia leverer produkter til bedre at forstå tekst ved hjælp af symboler og billeder..">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -62,7 +66,8 @@
       <br>
       <div class="row">
         <div class="col s12">
-          <h2 id="inform_me">Giv mig besked, når Symbolia åbner</h2>
+          <h2 id="inform_me">Symbolia åbner 4. april 2016</h2>
+          <h3>Giv mig besked</h3>
         </div>
       </div>
       <div class="row">
@@ -106,7 +111,7 @@
       </div>
       <div class="row">
 
-        <div class="col s12 m12 l6">
+        <div class="col s12 m12 l6 wow fadeInLeft">
           <div class="card z-depth-2" id="symwriter">
             <div class="card-image">
             <img src="images/material_product_icons/symwriter.png" alt="SymWriter icon" />
@@ -129,7 +134,7 @@
           </div>
         </div>
 
-        <div class="col s12 m12 l6">
+        <div class="col s12 m12 l6 wow fadeInRight">
           <div class="card z-depth-2" id="inprint">
             <div class="card-image">
             <img src="images/material_product_icons/in_print.png" alt="In Print 2 icon" />
@@ -152,7 +157,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col s12 m12 l6">
+        <div class="col s12 m12 l6 wow fadeInLeft">
           <div class="card z-depth-2" id="widgit-online">
             <div class="card-image">
             <img src="images/material_product_icons/widgit_online.png" alt="Widgit Online icon" />
@@ -173,7 +178,7 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m12 l6">
+        <div class="col s12 m12 l6 wow fadeInRight">
           <div class="card z-depth-2" id="widgit-go">
             <div class="card-image">
             <img src="images/material_product_icons/widgit_go.png" alt="Widgit Go icon" />
@@ -213,7 +218,7 @@
               <p class="grey-text text-lighten-4"><a href="https://www.widgit.com">widgit.com</a></p>
             </div>
             <div class="col s12 m6 right-align hide-on-small-only">
-              <img src="/images/logos/widgit_white_text_logo.png" alt="Widgit Logo" width="200" /><br>              
+              <img src="/images/logos/widgit_white_text_logo.png" alt="Widgit Logo" width="200" /><br>
               <p class="grey-text text-lighten-4"><a href="https://www.widgit.com">widgit.com</a></p>
             </div>
           </div>
@@ -226,15 +231,13 @@
       </footer>
 
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     <script type="text/javascript">
       $(".button-collapse").sideNav();
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
     <script src="mailchecker.js" charset="utf-8"></script>
     <script type="text/javascript">
+      new WOW().init();
       // var siteReadyDate = new Date(2016, 3, 4, 12, 0);
       // $('#symbolia_ready_countdown').countdown({until: siteReadyDate});
       // countdown(
@@ -294,5 +297,6 @@
     ga('send', 'pageview');
 
   </script>
+
   </body>
 </html>
