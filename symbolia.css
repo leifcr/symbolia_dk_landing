@@ -66,6 +66,10 @@
 	width: 100%;
 }
 
+.xlarge-font {
+  font-size: 135%;
+}
+
 .large-font {
   font-size: 125%;
 }
